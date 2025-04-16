@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kış ve İklim Krizi</title>
-    <!-- Favicon -->
+
     <link rel="icon" type="image/png" href="assets/img/icon.png">
-    <!-- Bootstrap CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- AOS Animation Library -->
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Custom CSS -->
+
     <link rel="stylesheet" href="css/style.css">
-    <!-- Font Awesome -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
+
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">İklim Krizi</a>
@@ -50,7 +50,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+
     <header class="hero-section" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/img/kis.jpg');">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
@@ -62,7 +62,7 @@
         </div>
     </header>
 
-    <!-- İstatistikler -->
+
     <section class="py-5">
         <div class="container">
             <div class="row">
@@ -97,7 +97,7 @@
         </div>
     </section>
 
-    <!-- Kış Etkileri -->
+    
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row">
@@ -138,7 +138,6 @@
         </div>
     </section>
 
-    <!-- Kış Zaman Çizelgesi -->
     <section class="py-5">
         <div class="container">
             <div class="row">
@@ -178,7 +177,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-dark text-white py-5">
         <div class="container">
             <div class="row">
@@ -225,23 +223,19 @@
         </div>
     </footer>
 
-    <!-- Theme Toggle Button -->
     <div class="theme-toggle" id="themeToggle">
         <i class="fas fa-moon"></i>
     </div>
 
-    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS
         AOS.init({
             duration: 1000,
             once: true
         });
 
-        // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
@@ -251,12 +245,10 @@
             }
         });
 
-        // Theme toggle functionality
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
         const icon = themeToggle.querySelector('i');
 
-        // Kaydedilmiş tema tercihini kontrol et
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             body.classList.add(savedTheme);
@@ -266,7 +258,6 @@
             }
         }
 
-        // Tüm sayfalarda tema uygulama
         function applyTheme() {
             const theme = localStorage.getItem('theme') || '';
             document.body.className = theme;
@@ -280,7 +271,6 @@
             }
         }
 
-        // Sayfa yüklendiğinde temayı uygula
         document.addEventListener('DOMContentLoaded', applyTheme);
 
         themeToggle.addEventListener('click', function() {
@@ -296,20 +286,16 @@
             }
         });
 
-        // Bülten form işlemi
         const newsletterForm = document.getElementById('newsletterForm');
         const subscriptionAlert = document.getElementById('subscriptionAlert');
 
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Formu temizle
             newsletterForm.reset();
             
-            // Alert'i göster
             subscriptionAlert.classList.remove('d-none');
             
-            // 3 saniye sonra alert'i gizle
             setTimeout(() => {
                 subscriptionAlert.classList.add('d-none');
             }, 3000);
